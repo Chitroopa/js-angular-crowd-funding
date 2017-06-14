@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>{{(projectToDisplay | async)?.projectName}}</h2>
+  <p>
+    {{(projectToDisplay | async)?.description}}
+  </p>
+</div>
+<div class="row">
+  <div class="col-md-8">
+  <img src='{{(projectToDisplay | async)?.imageUrl}}' alt="" />
+  </div>
+  <div class="col-md-4">
+    <h4>{{(projectToDisplay | async)?.fundRaised}}</h4>
+    <p>
+      pledged of ${{(projectToDisplay | async)?.fundGoal}} goal
+    </p>
+    <h4>{{(projectToDisplay | async)?.backers}}</h4>
+    <button (click)='backProject()' class="btn btn-success">Back this Project</button>
+  </div>
+</div>

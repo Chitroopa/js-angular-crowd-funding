@@ -1,0 +1,14 @@
+<div *ngFor="let project of projects | async">
+  <div class="col-md-4">
+    <div class="card">
+      <img class="card-img-top" src={{project.imageUrl}} alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{project.projectName}}</h4>
+        <p class="card-text">
+          {{project.description}}
+        </p>
+        <a (click)='goToDetailProject(project)' class="btn btn-primary">See details</a>
+      </div>
+    </div>
+  </div>
+</div>

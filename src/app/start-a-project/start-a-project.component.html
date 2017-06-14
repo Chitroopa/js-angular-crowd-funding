@@ -1,0 +1,13 @@
+<div class="form-group">
+  <label>Project Name</label>
+  <input #newProjectName><br>
+  <label>Image Url</label>
+  <input #newImageUrl><br>
+  <label>About project</label>
+  <input #newDescription><br>
+  <label>Fund Amount</label>
+  <input #newFundGoal><br>
+  <label>Risk and Challenges</label>
+  <input #newRiskAndChallenges><br>
+  <button type="button" (click)="submitForm(newProjectName.value,newImageUrl.value,newDescription.value,newFundGoal.value,newRiskAndChallenges.value); newProjectName.value='';newImageUrl.value='';newDescription.value='';newFundGoal.value='';newRiskAndChallenges.value=''">Save</button>
+</div>
