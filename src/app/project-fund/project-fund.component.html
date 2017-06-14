@@ -1,3 +1,13 @@
 <p>
-  project-fund works!
+  {{(projectToFund | async)?.projectName}}
+  {{(projectToFund | async)?.fundRaised}}
 </p>
+<form>
+  <label>Enter your Name</label>
+  <input class="form-control" #newName><br>
+  <label>Email</label>
+  <input  class="form-control" #newEmail><br>
+  <label>Amount backing</label>
+  <input class="form-control" #newAmount><br>
+  <button class="btn btn-success" (click)="submitFund(newName.value, newEmail.value, newAmount.value);newName.value=''; newEmail.value='';newAmount.value=''">Submit</button>
+</form>

@@ -12,6 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { StartAProjectComponent } from './start-a-project/start-a-project.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectFundComponent } from './project-fund/project-fund.component';
+import { ProjectEditComponent } from './project-edit/project-edit.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     ProjectsComponent,
     StartAProjectComponent,
     ProjectDetailComponent,
-    ProjectFundComponent
+    ProjectFundComponent,
+    ProjectEditComponent
   ],
   imports: [
     BrowserModule,

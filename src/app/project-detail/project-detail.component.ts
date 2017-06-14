@@ -34,4 +34,8 @@ export class ProjectDetailComponent implements OnInit {
   backProject(){
    this.router.navigate(['projects/fund/', this.projectId]);
   }
+
+  deleteProject(){
+    this.router.navigate(['project-edit', this.projectId]);
+  }
 }

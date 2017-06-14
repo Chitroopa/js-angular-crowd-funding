@@ -7,15 +7,15 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-project-fund',
-  templateUrl: './project-fund.component.html',
-  styleUrls: ['./project-fund.component.css'],
+  selector: 'app-project-edit',
+  templateUrl: './project-edit.component.html',
+  styleUrls: ['./project-edit.component.css'],
   providers: [ProjectService]
 })
-export class ProjectFundComponent implements OnInit {
+export class ProjectEditComponent implements OnInit {
 
-  projectId: string;
-  projectToFund;
+    projectId: string;
+    projectToDelete;
 
   constructor(
     private router: Router,
@@ -23,19 +23,18 @@ export class ProjectFundComponent implements OnInit {
     private location: Location,
     private projectService: ProjectService
   ) { }
+
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.projectId = (urlParameters['id']);
     });
-    this.projectToFund= this.projectService.getProjectById(this.projectId);
+    this.projectToDelete = this.projectService.getProjectById(this.projectId);
   }
 
-  submitFund(newName: string, newEmail: string, newAmount: string){
-    var amountRaised = parseInt(this.projectToFund.fundRaised) + parseInt(newAmount);
-    console.log(this.projectId);
-    console.log(this.projectToFund);
-    console.log(newAmount);
-    console.log(amountRaised);
-  }
 
+  beginDeletingProject(){
+    if(confirm("Are you sure you want to delete this item from the inventory?")){
+      this.projectService.deleteProject(this.projectId);
+    }
+  }
 }

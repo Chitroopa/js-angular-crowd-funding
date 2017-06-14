@@ -4,6 +4,7 @@ import { StartAProjectComponent } from './start-a-project/start-a-project.compon
 import { ProjectsComponent } from './projects/projects.component'
 import { ProjectDetailComponent } from './project-detail/project-detail.component'
 import { ProjectFundComponent } from './project-fund/project-fund.component'
+import { ProjectEditComponent } from './project-edit/project-edit.component'
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
   {
     path:'projects/fund/:id',
     component: ProjectFundComponent
+  },
+  {
+    path: 'project-edit/:id',
+    component: ProjectEditComponent
   }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

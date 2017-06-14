@@ -21,4 +21,9 @@ export class ProjectService {
   getProjectById(projectId: string) {
     return this.database.object('projects/' + projectId);
   }
+
+  deleteProject(localProjectToDelete){
+    var projectEntryInFirebase = this.getProjectById(localProjectToDelete);
+    projectEntryInFirebase.remove();
+  }
 }
