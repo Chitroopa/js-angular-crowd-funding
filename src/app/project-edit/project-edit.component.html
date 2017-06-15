@@ -1,1 +1,14 @@
-<button (click)="beginDeletingProject(selectedProject)">Delete</button>
+<div class="form-group">
+  <label>Project Name</label>
+  <input class="form-control"  [(ngModel)]="selectedProject.projectName"><br>
+  <label>Image Url</label>
+  <input class="form-control" [(ngModel)]="selectedProject.imageUrl"><br>
+  <label>About project</label>
+  <textarea class="form-control text-style" rows="8" cols="100" [(ngModel)]="selectedProject.description"></textarea><br>
+  <label>Fund Amount</label>
+  <input class="form-control" [(ngModel)]="selectedProject.fundGoal"><br>
+  <label>Risk and Challenges</label>
+  <input class="form-control" [(ngModel)]="selectedProject.riskAndChallenges"><br>
+</div>
+  <button (click)="beginUpdatingProject(selectedProject)">Update</button>
+  <button (click)="beginDeletingProject()">Delete</button>

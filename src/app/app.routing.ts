@@ -5,6 +5,7 @@ import { ProjectsComponent } from './projects/projects.component'
 import { ProjectDetailComponent } from './project-detail/project-detail.component'
 import { ProjectFundComponent } from './project-fund/project-fund.component'
 import { ProjectEditComponent } from './project-edit/project-edit.component'
+import { AdminComponent }   from './admin/admin.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'project-edit/:id',
     component: ProjectEditComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
