@@ -14,8 +14,9 @@ export class StartAProjectComponent implements OnInit {
 
   ngOnInit() { }
 
-  submitForm(newProjectName: string,newImageUrl:string, newDescription: string,newFundGoal: number,newRiskAndChallenges: string) {
-    var newProject: Project = new Project(newProjectName, newImageUrl,newDescription, newFundGoal, newRiskAndChallenges);
+  submitForm(newProjectName: string,newImageUrl:string, newDescription: string,newFundGoal: string,newRiskAndChallenges: string) {
+    var newFundGoalFormat: number = parseInt(newFundGoal);
+    var newProject: Project = new Project(newProjectName, newImageUrl,newDescription, newFundGoalFormat, newRiskAndChallenges);
     this.projectService.addProject(newProject);
   }
 }

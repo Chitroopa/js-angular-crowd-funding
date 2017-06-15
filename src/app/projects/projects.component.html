@@ -1,4 +1,12 @@
-<div *ngFor="let project of projects | async">
+<div class="row">
+  <select (change)="onChange($event.target.value)">
+    <option value="all" selected="selected">All Projects</option>
+    <option value="morefund">Most funded projects</option>
+    <option value="lessfund">Least funded projects</option>
+  </select>
+</div>
+
+<div *ngFor="let project of projects | async | fund:filterByFund">
   <div class="col-md-4">
     <div class="card">
       <img class="card-img-top" src={{project.imageUrl}} alt="Card image cap">
