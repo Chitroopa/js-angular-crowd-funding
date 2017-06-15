@@ -6,3 +6,7 @@
 .card {
   height: 450px;
 }
+
+.text-style {
+  white-space: pre-wrap;
+}

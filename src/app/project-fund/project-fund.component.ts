@@ -27,15 +27,16 @@ export class ProjectFundComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = (urlParameters['id']);
     });
-    this.projectToFund= this.projectService.getProjectById(this.projectId);
+    this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
+      this.projectToFund = dataLastEmittedFromObserver;
+    })
   }
 
   submitFund(newName: string, newEmail: string, newAmount: string){
     var amountRaised = parseInt(this.projectToFund.fundRaised) + parseInt(newAmount);
-    console.log(this.projectId);
-    console.log(this.projectToFund);
-    console.log(newAmount);
-    console.log(amountRaised);
+    var backersCount = parseInt(this.projectToFund.backers) + 1;
+    this.projectService.updateProjectFund(this.projectId, amountRaised, backersCount);
+    this.router.navigate(['projects', this.projectId]);
   }
 
 }

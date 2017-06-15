@@ -26,4 +26,11 @@ export class ProjectService {
     var projectEntryInFirebase = this.getProjectById(localProjectToDelete);
     projectEntryInFirebase.remove();
   }
+
+  updateProjectFund(projectId: string, amountRaised: number, backersCount: number) {
+    console.log(projectId);
+    var projectEntryInFirebase = this.getProjectById(projectId);
+    projectEntryInFirebase.update({fundRaised: amountRaised,
+                                    backers: backersCount});
+  }
 }
